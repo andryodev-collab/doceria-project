@@ -1,0 +1,27 @@
+locale: 'pt'
+backend:
+  name: git-gateway
+  branch: main
+media_folder: 'static/img'
+public_folder: '/img'
+
+collections:
+  - name: 'doces'
+    label: 'Doces'
+    folder: 'src/produtos/doces'
+    create: true
+    fields:
+      - { name: 'nome', label: 'Nome', widget: 'string' }
+      - { name: 'preco', label: 'Preço (R$)', widget: 'number', valueType: 'float' }
+      - { name: 'foto', label: 'Foto', widget: 'image' }
+      - { name: 'disponivel', label: 'Disponível', widget: 'boolean', default: true }
+
+  - name: 'salgados'
+    label: 'Salgados'
+    folder: 'src/produtos/salgados'
+    create: true
+    fields:
+      - { name: 'nome', label: 'Nome', widget: 'string' }
+      - { name: 'preco', label: 'Preço (R$)', widget: 'number', valueType: 'float' }
+      - { name: 'foto', label: 'Foto', widget: 'image' }
+      - { name: 'disponivel', label: 'Disponível', widget: 'boolean', default: true }
