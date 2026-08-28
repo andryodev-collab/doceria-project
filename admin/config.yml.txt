@@ -1,11 +1,40 @@
 locale: 'pt'
 backend:
-  name: git-gateway
-  branch: main
+  name: 'github'  # Agora usamos o GitHub direto
+  repo: 'SEU-USUARIO/doceria-da-minha-mae'  # ⚠️ MUDE AQUI!
+  branch: 'main'
+
 media_folder: 'static/img'
 public_folder: '/img'
 
 collections:
+  # ===== CONFIGURAÇÕES GLOBAIS =====
+  - name: 'configuracoes'
+    label: 'Configurações da Loja'
+    files:
+      - name: 'config'
+        label: 'Dados da Loja'
+        file: 'src/configuracoes/config.md'
+        fields:
+          - { name: 'nome_loja', label: 'Nome da Loja', widget: 'string', default: 'Doceria Delícia' }
+          - { name: 'slogan', label: 'Slogan', widget: 'string', default: 'Feito com amor, cada dia mais doce' }
+          - { name: 'logo', label: 'Logo (URL ou imagem)', widget: 'image', default: '/img/logo.png' }
+          - { name: 'whatsapp', label: 'WhatsApp (com DDD e país)', widget: 'string', default: '5511999999999' }
+          - { name: 'cor_principal', label: 'Cor principal (hex)', widget: 'string', default: '#f472b6' }
+          - { name: 'cor_secundaria', label: 'Cor secundária (hex)', widget: 'string', default: '#f9a8d4' }
+
+  # ===== SUGESTÕES DA HOME =====
+  - name: 'sugestoes'
+    label: 'Sugestões do Dia (Home)'
+    folder: 'src/sugestoes'
+    create: true
+    max: 3
+    fields:
+      - { name: 'titulo', label: 'Título', widget: 'string' }
+      - { name: 'imagem', label: 'Imagem', widget: 'image' }
+      - { name: 'link', label: 'Link (opcional)', widget: 'string', required: false }
+
+  # ===== DOCES =====
   - name: 'doces'
     label: 'Doces'
     folder: 'src/produtos/doces'
@@ -16,6 +45,7 @@ collections:
       - { name: 'foto', label: 'Foto', widget: 'image' }
       - { name: 'disponivel', label: 'Disponível', widget: 'boolean', default: true }
 
+  # ===== SALGADOS =====
   - name: 'salgados'
     label: 'Salgados'
     folder: 'src/produtos/salgados'
