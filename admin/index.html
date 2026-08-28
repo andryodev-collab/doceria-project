@@ -6,10 +6,15 @@
     <title>Painel - Doceria</title>
 </head>
 <body>
-    <!-- Sveltia CMS - é tipo o Decap, mas mais rapidinho e funciona no Cloudflare -->
     <script type="module">
         import CMS from 'https://cdn.sveltia.io/sveltia-cms/dist/sveltia-cms.js';
-        CMS.init();
+
+        // 👇 DIZ ONDE ESTÁ O ARQUIVO DE CONFIGURAÇÃO
+        CMS.init({
+            config: {
+                load: '/admin/config.yml'
+            }
+        });
     </script>
 </body>
 </html>

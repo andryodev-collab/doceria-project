@@ -1,7 +1,7 @@
 locale: 'pt'
 backend:
   name: 'github'  # Agora usamos o GitHub direto
-  repo: 'SEU-USUARIO/doceria-da-minha-mae'  # ⚠️ MUDE AQUI!
+  repo: 'andryodev-collab/doceria-project'  # ⚠️ MUDE AQUI!
   branch: 'main'
 
 media_folder: 'static/img'
